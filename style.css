@@ -1,0 +1,253 @@
+/* =========================================================
+   PORTOFOLIO PROFESIONAL - SOFT DARK NAVY
+   File: style.css
+   ========================================================= */
+
+/* 1. Variabel Warna Soft Dark */
+:root {
+    --bg-main: #0f172a;              /* Gelap navy lembut, nyaman di mata */
+    --card-bg: #1e293b;              /* Latar kartu sedikit lebih terang */
+    --border-color: #334155;         /* Garis batas halus */
+    --navy-accent: #3b82f6;          /* Biru aksen cerah */
+    --blue-bright: #38bdf8;          /* Biru cyan menyala untuk ikon & badge */
+    --text-heading: #f8fafc;         /* Teks judul putih lembut */
+    --text-body: #cbd5e1;            /* Teks isi abu-abu terang (tidak menyilaukan) */
+    --text-muted: #94a3b8;           /* Teks penjelasan sekunder */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    line-height: 1.75;
+    padding: 30px 20px;
+}
+
+/* 2. Tipografi Judul */
+h1, h2, h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-heading);
+    letter-spacing: -0.3px;
+}
+
+/* 3. Header / Hero Section */
+.hero-header {
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 45px 30px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    animation: munculHalus 0.8s ease-out;
+}
+
+.profile-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--blue-bright);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* 4. Layout & Kartu Utama */
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    animation: munculHalus 1s ease-out 0.2s backwards;
+}
+
+.card-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efek Hover Kartu */
+.card-section:hover {
+    transform: translateY(-4px);
+    border-color: var(--blue-bright);
+    box-shadow: 0 12px 24px -10px rgba(56, 189, 248, 0.2);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title i {
+    font-size: 1.3rem;
+    color: var(--blue-bright);
+}
+
+.section-title h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* Format Rata Kanan-Kiri */
+.justify-text {
+    text-align: justify;
+    color: var(--text-body);
+    font-size: 0.98rem;
+}
+
+/* 5. Sub-card Visi & Misi */
+.sub-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--blue-bright);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.sub-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue-bright);
+}
+
+.custom-list {
+    padding-left: 20px;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+/* 6. Keahlian (Pill Badges) */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-pill {
+    background: #334155;
+    color: #f8fafc;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.skill-pill i {
+    color: var(--blue-bright);
+}
+
+.skill-pill:hover {
+    background: var(--blue-bright);
+    color: #0f172a;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.skill-pill:hover i {
+    color: #0f172a;
+}
+
+/* 7. Kartu Organisasi & Pendidikan */
+.timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--navy-accent);
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.card-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-header-info h3 {
+    font-size: 1.15rem;
+}
+
+.badge-role, .badge-year {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--blue-bright);
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.organization-name, .major-title {
+    color: var(--blue-bright);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 8. Footer */
+.footer-modern {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 20px;
+    animation: munculHalus 1.2s ease-out 0.4s backwards;
+}
+
+/* Keyframe Animasi Fade In */
+@keyframes munculHalus {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
